@@ -11,6 +11,7 @@ ActiveRecord::Base.establish_connection(
 )
 
 get '/applicants' do
+  content_type :json
   Applicant.all.to_json
 end
 
