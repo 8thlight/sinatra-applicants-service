@@ -1,5 +1,19 @@
 require 'sinatra'
+require 'active_record'
+require_relative 'lib/applicant'
 
-get '/frank-says' do
-  'Put this in your pipe and smoke it!'
+ActiveRecord::Base.establish_connection(
+  adapter: 'mysql2',
+  host: 'mysql',
+  username: 'root',
+  password: 'password',
+  database: 'footprints'
+)
+
+get '/applicants' do
+  Applicant.all.to_json
+end
+
+post '/applicant' do
+  status 201
 end
