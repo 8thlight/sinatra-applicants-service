@@ -1,0 +1,13 @@
+version: '3'
+networks:
+  default:
+    external:
+      name: footprints-mongeeses_default
+
+services:
+  ruby-sinatra:
+    image: erikap/ruby-sinatra
+    ports:
+      - 90:80
+    volumes:
+      - .:/usr/src/app
