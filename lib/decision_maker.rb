@@ -1,0 +1,2 @@
+class DecisionMaker
+end
